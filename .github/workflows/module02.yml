@@ -2,10 +2,10 @@ name: Lab 02 - AI-Assisted Development
 on:
   push:
     paths:
-      - 'lab02/**'
+      - 'module02/**'
   pull_request:
     paths:
-      - 'lab02/**'
+      - 'module02/**'
 
 jobs:
   check:
@@ -17,16 +17,16 @@ jobs:
           python-version: '3.10'
       - name: Check required files
         run: |
-          if [ -f lab02/.cascade/AGENTS.md ]; then
+          if [ -f module02/.cascade/AGENTS.md ]; then
             echo "✓ AGENTS.md found"
           else
             echo "✗ AGENTS.md not found"
             exit 1
           fi
-          if [ -f lab02/lab02.py ]; then
-            echo "✓ lab02.py found"
-            python lab02/lab02.py
+          if [ -f module02/module02.py ]; then
+            echo "✓ module02.py found"
+            python module02/module02.py
           else
-            echo "✗ lab02.py not found"
+            echo "✗ module02.py not found"
             exit 1
           fi

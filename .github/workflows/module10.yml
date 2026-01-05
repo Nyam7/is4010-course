@@ -1,11 +1,11 @@
-name: Lab 14 - Rust
+name: Lab 10 - Rust
 on:
   push:
     paths:
-      - 'lab14/**'
+      - 'module10/**'
   pull_request:
     paths:
-      - 'lab14/**'
+      - 'module10/**'
 
 jobs:
   test:
@@ -14,8 +14,8 @@ jobs:
       - uses: actions/checkout@v3
       - uses: dtolnay/rust-toolchain@stable
       - name: Run cargo test
-        run: cd lab14 && cargo test --verbose
+        run: cd module10 && cargo test --verbose
       - name: Run cargo fmt check
-        run: cd lab14 && cargo fmt --check
+        run: cd module10 && cargo fmt --check
       - name: Run cargo clippy
-        run: cd lab14 && cargo clippy -- -D warnings
+        run: cd module10 && cargo clippy -- -D warnings

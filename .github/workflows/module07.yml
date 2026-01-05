@@ -1,11 +1,11 @@
-name: Lab 03 - Python Basics
+name: Lab 07 - Python
 on:
   push:
     paths:
-      - 'lab03/**'
+      - 'module07/**'
   pull_request:
     paths:
-      - 'lab03/**'
+      - 'module07/**'
 
 jobs:
   test:
@@ -17,5 +17,5 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: pip install -r requirements.txt
-      - name: Run Lab 03 tests
-        run: pytest lab03/tests/ -v
+      - name: Run Lab 07 tests
+        run: pytest module07/tests/ -v

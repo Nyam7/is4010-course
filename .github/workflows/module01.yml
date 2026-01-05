@@ -2,10 +2,10 @@ name: Lab 01 - Development Toolkit
 on:
   push:
     paths:
-      - 'lab01/**'
+      - 'module01/**'
   pull_request:
     paths:
-      - 'lab01/**'
+      - 'module01/**'
 
 jobs:
   check:
@@ -17,9 +17,9 @@ jobs:
           python-version: '3.10'
       - name: Check hello.py exists
         run: |
-          if [ -f lab01/hello.py ]; then
+          if [ -f module01/hello.py ]; then
             echo "✓ hello.py found"
-            python lab01/hello.py
+            python module01/hello.py
           else
             echo "✗ hello.py not found"
             exit 1
