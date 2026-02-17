@@ -1,4 +1,3 @@
-# test_lab05.py
 import pytest
 from lab05 import calculate_average_age, get_active_user_emails
 
@@ -19,18 +18,14 @@ def sample_users():
     ]
 
 
-# Tests for calculate_average_age
 def test_calculate_average_age_normal(sample_users):
-    # (30 + 25 + 35) / 3 = 30.0
     assert calculate_average_age(sample_users) == 30.0
 
 
 def test_calculate_average_age_empty_list():
-    # Should handle the error and return a default value
     assert calculate_average_age([]) == 0.0
 
 
-# Tests for get_active_user_emails
 def test_get_active_user_emails_normal(sample_users):
     expected_emails = ["alice@example.com", "charlie@example.com", "eve@example.com"]
     assert set(get_active_user_emails(sample_users)) == set(expected_emails)
