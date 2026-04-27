@@ -2,9 +2,14 @@ trait Animal {
     fn name(&self) -> &str;
     fn sound(&self) -> &str;
     fn age(&self) -> u8;
-    
+
     fn describe(&self) -> String {
-        format!("{} ({} years old) says: {}", self.name(), self.age(), self.sound())
+        format!(
+            "{} ({} years old) says: {}",
+            self.name(),
+            self.age(),
+            self.sound()
+        )
     }
 }
 
@@ -22,11 +27,11 @@ impl Animal for Dog {
     fn name(&self) -> &str {
         &self.name
     }
-    
+
     fn sound(&self) -> &str {
         "Woof!"
     }
-    
+
     fn age(&self) -> u8 {
         self.age
     }
@@ -36,11 +41,11 @@ impl Animal for Cat {
     fn name(&self) -> &str {
         &self.name
     }
-    
+
     fn sound(&self) -> &str {
         "Meow!"
     }
-    
+
     fn age(&self) -> u8 {
         self.age
     }
@@ -57,27 +62,24 @@ fn main() {
         name: String::from("Buddy"),
         age: 5,
     };
-    
+
     let cat = Cat {
         name: String::from("Whiskers"),
         age: 3,
     };
-    
+
     println!("Dog: {}", dog.describe());
     println!("Cat: {}", cat.describe());
-    
-    let animals: Vec<Box<dyn Animal>> = vec![
-        Box::new(dog),
-        Box::new(cat),
-    ];
-    
+
+    let animals: Vec<Box<dyn Animal>> = vec![Box::new(dog), Box::new(cat)];
+
     print_animal_sounds(animals);
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_dog_sound() {
         let dog = Dog {
@@ -86,7 +88,7 @@ mod tests {
         };
         assert_eq!(dog.sound(), "Woof!");
     }
-    
+
     #[test]
     fn test_cat_sound() {
         let cat = Cat {
@@ -95,7 +97,7 @@ mod tests {
         };
         assert_eq!(cat.sound(), "Meow!");
     }
-    
+
     #[test]
     fn test_dog_name() {
         let dog = Dog {
@@ -104,7 +106,7 @@ mod tests {
         };
         assert_eq!(dog.name(), "Buddy");
     }
-    
+
     #[test]
     fn test_dog_age() {
         let dog = Dog {
@@ -113,7 +115,7 @@ mod tests {
         };
         assert_eq!(dog.age(), 5);
     }
-    
+
     #[test]
     fn test_cat_describe() {
         let cat = Cat {

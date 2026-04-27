@@ -1,5 +1,5 @@
 mod student;
-use student::{Student, Grade};
+use student::{Grade, Student};
 
 fn main() {
     let mut student = Student::new(
@@ -16,7 +16,7 @@ fn main() {
 
     student.add_credits(90);
     println!("Can graduate? {}", student.can_graduate());
-    
+
     let grade_a = Grade::A;
     println!("Grade A GPA: {}", grade_a.to_gpa_points());
     println!("Is Grade A passing? {}", grade_a.is_passing());
