@@ -10,21 +10,21 @@ fn main() {
     problem_6();
     problem_7();
     println!("\n=== Implementation Exercises ===\n");
-    
+
     let s = to_uppercase_owned(String::from("hello"));
     println!("Uppercase: {}", s);
-    
+
     let s = String::from("testing");
     let len = string_length(&s);
     println!("Length: {}", len);
-    
+
     let mut s = String::from("hello");
     append_suffix(&mut s, " world");
     println!("Appended: {}", s);
-    
+
     let result = concat_strings("Hello", " Rust");
     println!("Concatenated: {}", result);
-    
+
     let word = first_word("hello world");
     println!("First word: {}", word);
 }
@@ -87,7 +87,7 @@ fn problem_6() {
     }
 }
 
-fn print_with_number(s: &String, n: i32) {
+fn print_with_number(s: &str, n: i32) {
     println!("  {}: {}", n, s);
 }
 
@@ -102,7 +102,7 @@ fn to_uppercase_owned(s: String) -> String {
     s.to_uppercase()
 }
 
-fn string_length(s: &String) -> usize {
+fn string_length(s: &str) -> usize {
     s.len()
 }
 
@@ -124,7 +124,7 @@ fn first_word(s: &str) -> &str {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn test_calculate_length_borrows() {
         let s = String::from("testing");
@@ -132,20 +132,20 @@ mod tests {
         assert_eq!(len, 7);
         assert_eq!(*s_ref, "testing");
     }
-    
+
     #[test]
     fn test_add_to_string_mutates() {
         let mut s = String::from("hello");
         add_to_string(&mut s);
         assert_eq!(s, "hello, world");
     }
-    
+
     #[test]
     fn test_create_string_returns_owned() {
         let result = create_string();
         assert_eq!(result, "hello");
     }
-    
+
     #[test]
     fn test_print_with_number_borrows() {
         let data = String::from("Rust");
@@ -154,32 +154,32 @@ mod tests {
         }
         assert_eq!(data, "Rust");
     }
-    
+
     #[test]
     fn test_to_uppercase_owned() {
         let result = to_uppercase_owned(String::from("hello"));
         assert_eq!(result, "HELLO");
     }
-    
+
     #[test]
     fn test_string_length() {
         let s = String::from("testing");
         assert_eq!(string_length(&s), 7);
     }
-    
+
     #[test]
     fn test_append_suffix() {
         let mut s = String::from("hello");
         append_suffix(&mut s, " world");
         assert_eq!(s, "hello world");
     }
-    
+
     #[test]
     fn test_concat_strings() {
         let result = concat_strings("hello", " world");
         assert_eq!(result, "hello world");
     }
-    
+
     #[test]
     fn test_first_word() {
         assert_eq!(first_word("hello world"), "hello");
