@@ -1,0 +1,1 @@
+AI tools were used to generate the initial project structure, code files, tests, and documentation. The implementation was created with guidance from the user and reviewed for correctness in the local workspace.
