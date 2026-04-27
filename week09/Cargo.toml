@@ -1,3 +1,6 @@
-[workspace]
-members = ["rust_basics"]
-resolver = "2"
+[package]
+name = "lab09"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

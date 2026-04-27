@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub struct Student {
     pub id: String,
     pub name: String,
@@ -5,6 +6,7 @@ pub struct Student {
     pub credits_earned: u16,
 }
 
+#[allow(dead_code)]
 #[derive(Debug, Clone, PartialEq)]
 pub enum Grade {
     A,
@@ -43,6 +45,7 @@ impl Student {
 }
 
 impl Grade {
+    #[allow(dead_code)]
     pub fn to_gpa_points(&self) -> f32 {
         match self {
             Grade::A => 4.0,
@@ -53,6 +56,7 @@ impl Grade {
         }
     }
 
+    #[allow(dead_code)]
     pub fn from_string(s: &str) -> Option<Grade> {
         match s.to_uppercase().as_str() {
             "A" => Some(Grade::A),

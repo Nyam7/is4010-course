@@ -1,0 +1,10 @@
+[workspace]
+members = [
+    "week09",
+    "week10",
+    "week11",
+    "week12",
+    "week13",
+    "week14",
+]
+resolver = "2"

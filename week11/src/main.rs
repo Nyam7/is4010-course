@@ -19,6 +19,7 @@ fn main() {
     
     let grade_a = Grade::A;
     println!("Grade A GPA: {}", grade_a.to_gpa_points());
+    println!("Is Grade A passing? {}", grade_a.is_passing());
 }
 
 #[cfg(test)]
